@@ -49,7 +49,6 @@ function AccountCard({ account }) {
       }
     }
   }, [account]);
-
   return (
     <Card
       style={{
@@ -67,8 +66,8 @@ function AccountCard({ account }) {
 
         <Text italic>{`Account Balance: ${account.AccountBalance}`}</Text>
       </div>
-      <Table></Table>
-      <Button> Add Transaction </Button>
+      {accountDetails.length && <Table data={accountDetails} />}
+      <Modal> Add Transaction </Modal>
     </Card>
   );
 }

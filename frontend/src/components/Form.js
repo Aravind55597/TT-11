@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Cascader,
@@ -10,13 +10,36 @@ import {
   Select,
   Switch,
   TreeSelect,
-} from 'antd';
+} from "antd";
+import { useAuth } from "../contexts/authContext.js";
+import { useNavigate } from "react-router-dom";
+
 const { TextArea } = Input;
 const App = () => {
-  const [componentSize, setComponentSize] = useState('default');
+  const auth = useAuth();
+  const [formData, setFormData] = useState({
+    receivingAmt: 0,
+    date: "", //today's date
+    amount: 0,
+    comment: "",
+  });
+  const [componentSize, setComponentSize] = useState("default");
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
+
+  const onChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
+  const change = (e) => {
+    console.log(e.target);
+  };
+
   return (
     <Form
       labelCol={{
@@ -32,25 +55,27 @@ const App = () => {
       onValuesChange={onFormLayoutChange}
       size={componentSize}
     >
-      {/* <Form.Item label="Form Size" name="size">
-        <Radio.Group>
-          <Radio.Button value="small">Small</Radio.Button>
-          <Radio.Button value="default">Default</Radio.Button>
-          <Radio.Button value="large">Large</Radio.Button>
-        </Radio.Group>
-      </Form.Item> */}
       <Form.Item label="Receiving Account">
-        <Input />
+        <Input
+          id="receivingAmt"
+          onChange={onChange}
+          value={formData.receivingAmt}
+        />
       </Form.Item>
       <Form.Item label="DatePicker">
-        <DatePicker />
+        <DatePicker id="date" onChange={onChange} value={formData.date} />
       </Form.Item>
       <Form.Item label="Amount">
-        <InputNumber />
+        <InputNumber id="amount" onChange={onChange} value={formData.amount} />
       </Form.Item>
       <Form.Item label="Comment">
-          <TextArea rows={4} />
-        </Form.Item>
+        <TextArea
+          rows={4}
+          id="comment"
+          onChange={onChange}
+          value={formData.comment}
+        />
+      </Form.Item>
     </Form>
   );
 };
