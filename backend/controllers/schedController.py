@@ -1,5 +1,6 @@
-from flask import jsonify
+from flask import jsonify, request
 from models.db_models import ScheduledTransaction
+from utils.dbConfig import db
 
 def get_scheduled_transactions_accountid(AccountID):
     scheduled_list = ScheduledTransaction.query.filter_by(AccountID=AccountID)
@@ -14,5 +15,26 @@ def get_scheduled_transactions_accountid(AccountID):
         {
             "code": 404,
             "message": "No transactions available"
+        }
+    )
+
+def create_scheduled_transactions():
+    data = request.get_json()
+    transaction = ScheduledTransaction(**data)
+
+    try:
+        db.session.add(transaction)
+        db.session.commit()
+    except Exception as e:
+        return jsonify(
+            {
+                "code": 500,
+                "message": e
+            }
+        )
+    return jsonify(
+        {
+            "code": 201,
+            "data": transaction.json()
         }
     )
