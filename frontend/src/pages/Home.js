@@ -72,13 +72,8 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <Table></Table>
         <div className="row">
           <div className="col-md-12">
-            <div className="card">
-              <AccountInfo />
-            </div>
-
             <div className="card card-container">
               <div className="mb-3 d-grid">
                 <button className="btn btn-primary" onClick={getExchangeRate}>
