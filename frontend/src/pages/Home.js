@@ -77,7 +77,7 @@ const Home = () => {
               <AccountInfo />
             </div>
 
-            <div className="card card-container">
+            {/* <div className="card card-container">
               <div className="mb-3 d-grid">
                 <button className="btn btn-primary" onClick={getExchangeRate}>
                   <span>Get Exchange Rate</span>
@@ -101,7 +101,7 @@ const Home = () => {
                   <span>Get Protected Route</span>
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

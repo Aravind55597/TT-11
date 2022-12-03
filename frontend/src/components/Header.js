@@ -6,27 +6,26 @@ import { useAuth } from "../contexts/authContext";
 import DbsLogo from "../assets/DBS-Bank-logo.png";
 
 const Header = () => {
-  
-  const auth = useAuth(); 
+  const auth = useAuth();
 
   const logOut = () => {
-    auth.logout(); 
+    auth.logout();
   };
 
   return (
     <nav className="navbar navbar-expand navbar-light bg-light px-3">
-        {/* <Link to={"/"} className="navbar-brand">
+      {/* <Link to={"/"} className="navbar-brand">
           DBS
         </Link> */}
-        <a href="/"><img width="96px" alt="profile-img" src={DbsLogo}/></a>
-        <div className="navbar-nav me-auto">
-          <li className="nav-item">
-            <Link to={"/"} className="nav-link">
-              Home
-            </Link>
-          </li>
+      {/* <a href="/"><img width="96px" alt="profile-img" src={DbsLogo}/></a> */}
+      <div className="navbar-nav me-auto">
+        <li className="nav-item">
+          <Link to={"/"} className="nav-link">
+            <img width="96px" alt="profile-img" src={DbsLogo} />
+          </Link>
+        </li>
 
-          {/* {showModeratorBoard && (
+        {/* {showModeratorBoard && (
             <li className="nav-item">
               <Link to={"/mod"} className="nav-link">
                 Moderator Board
@@ -42,45 +41,45 @@ const Header = () => {
             </li>
           )} */}
 
-          {auth.user && (
+        {/* {auth.user && (
             <li className="nav-item">
               <Link to={"/user"} className="nav-link">
                 User
               </Link>
             </li>
-          )}
-        </div>
+          )} */}
+      </div>
 
-        {auth.user ? (
-          <div className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
-              {auth.user.info.Firstname + " " +auth.user.info.Lastname}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/login"} className="nav-link" onClick={logOut}>
+      {auth.user ? (
+        <div className="navbar-nav ms-auto">
+          <li className="nav-item">
+            <Link to={"/profile"} className="nav-link">
+              {auth.user.info.Firstname + " " + auth.user.info.Lastname}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/login"} className="nav-link" onClick={logOut}>
               Logout
-              </Link>
-            </li>
-          </div>
-        ) : (
-          <div className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            </li>
+            </Link>
+          </li>
+        </div>
+      ) : (
+        <div className="navbar-nav ms-auto">
+          <li className="nav-item">
+            <Link to={"/login"} className="nav-link">
+              Login
+            </Link>
+          </li>
 
-            {/* <li className="nav-item">
+          {/* <li className="nav-item">
               <Link to={"/register"} className="nav-link">
                 Sign Up
               </Link>
             </li> */}
-          </div>
-        )}
-      </nav>
-  )
-}
+        </div>
+      )}
+    </nav>
+  );
+};
 
-export default Header
+export default Header;
