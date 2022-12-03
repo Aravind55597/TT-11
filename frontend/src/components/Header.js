@@ -22,7 +22,7 @@ const Header = () => {
         <div className="navbar-nav me-auto">
           <li className="nav-item">
             <Link to={"/"} className="nav-link">
-            DBS
+            DbsLogo
             </Link>
           </li>
 
