@@ -8,11 +8,6 @@ import ViewUserDetails from "./ViewUserDetails";
 import ViewPersonalDetails from "./ViewPersonalDetails";
 
 function TestHome() {
-  const user_ID = auth.info.UserID;
-  const token = auth.token;
-
-  let navigate = useNavigate();
-  const auth = useAuth();
   return (
     <div className="container-test">
       <ViewUserDetails></ViewUserDetails>
