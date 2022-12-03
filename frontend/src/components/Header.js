@@ -55,7 +55,7 @@ const Header = () => {
           <div className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link to={"/profile"} className="nav-link">
-                {auth.user.info.username}
+              {auth.user.info.Firstname + " " +auth.user.info.Lastname}
               </Link>
             </li>
             <li className="nav-item">

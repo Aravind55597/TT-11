@@ -10,6 +10,13 @@ class BankAccount(db.Model):
     AccountType = db.Column(db.String(255))
     AccountBalance = db.Column(db.Numeric(10, 2))
 
+    def json(self):
+        return {
+            "AccountID": self.AccountID,
+            "UserID": self.UserID,
+            "AccountType": self.AccountType,
+            "AccountBalance": self.AccountBalance,
+        }
 
 class ScheduledTransaction(db.Model):
     __tablename__ = 'ScheduledTransactions'
@@ -34,7 +41,6 @@ class ScheduledTransaction(db.Model):
 
 class User(db.Model):
     __tablename__ = 'User'
-
     UserID = db.Column(db.Integer, primary_key=True)
     Username = db.Column(db.String(20))
     Password = db.Column(db.String(20))
