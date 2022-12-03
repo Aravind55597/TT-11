@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Card } from "antd";
+import { Button, Card, Input } from "antd";
 import "./TestHome.css";
+import Search from "antd/es/transfer/search";
 
 function ViewUserDetails(props) {
   const defaultdetails = {
@@ -13,6 +14,8 @@ function ViewUserDetails(props) {
     Email: "asd@a.com",
     Address: "123 street",
   };
+
+  const [changePassword, SetChangePassword] = useState(false);
 
   return (
     <div className="card-container ">
@@ -52,8 +55,44 @@ function ViewUserDetails(props) {
           <div className="text-container">
             <p>{"*".repeat(props.password.length)}</p>
           </div>
-          <div className="action_button">Change Password</div>
+          <div
+            className="action_button"
+            onClick={() => {
+              SetChangePassword(true);
+            }}
+          >
+            Change Password
+          </div>
         </div>
+        {changePassword ? (
+          <div>
+            <div className="line-container">
+              <div
+                className="action_button"
+                onClick={() => {
+                  SetChangePassword(true);
+                }}
+              >
+                <Input
+                  placeholder="Enter new Password"
+                  onSearch={(value) => console.log(value)}
+                  style={{ width: 200 }}
+                />
+                <Button
+                  onClick={() => {
+                    SetChangePassword(false);
+                    console.log("Close");
+                  }}
+                >
+                  Change
+                </Button>
+              </div>
+              ;
+            </div>
+          </div>
+        ) : (
+          <br></br>
+        )}
       </Card>
     </div>
   );
