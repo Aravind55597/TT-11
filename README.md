@@ -39,6 +39,21 @@ PUT /user/<UserID>
         "Email"
     }
 
+### Initial Set Up
+
+# Environment variables (.env values for backend)
+
+| Environment Variable  | Value |
+| ------------- | ------------- |
+| SQLALCHEMY_DATABASE_URI  | mysql://username:hostname:port/Bank |
+| JWT_SECRET_KEY  | jwt_secret_key  |
+| FLASK_RUN_PORT | 5000  |
+| FLASK_RUN_HOST  | 0.0.0.0  |
+
+### FRONTEND GUIDE 
 
 
+
+
+### BACKEND GUIDE 
 
