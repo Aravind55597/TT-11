@@ -1,8 +1,11 @@
 import React from "react";
-import {Card, Button } from "antd";
+import { Card, Button } from "antd";
+import { Space, Typography } from "antd";
 import Table from "../components/Table.js";
+
+const { Text, Link } = Typography;
+
 function AccountCard({ account }) {
-  console.log(account);
   return (
     <Card
       style={{
@@ -13,8 +16,11 @@ function AccountCard({ account }) {
       extra={<a href="#">More</a>}
     >
       <div className="d-flex">
-        <p>{`Account Type: ${account.AccountType}`}</p>
-        <p>{`Account Balance: ${account.AccountBalance}`}</p>
+        <Text
+          strong
+          className="me-3"
+        >{`Account Type: ${account.AccountType}`}</Text>
+        <Text italic>{`Account Balance: $${account.AccountBalance}`}</Text>
       </div>
       <Table></Table>
       <Button> Add Transaction </Button>
