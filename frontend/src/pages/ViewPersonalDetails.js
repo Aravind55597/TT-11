@@ -2,7 +2,7 @@ import React from "react";
 
 import { Card } from "antd";
 
-function ViewUserDetails() {
+function ViewPersonalDetails() {
   const defaultdetails = {
     UserID: "1",
     Username: "qwer",
@@ -23,23 +23,22 @@ function ViewUserDetails() {
     >
       <>
         <Card
-          title="User Details"
+          title="PersonalDetails"
           bordered
           style={{
             width: 500,
             border: "2px solid black",
-            "justify-content": "flex-start",
+            justifyContent: "flex-start",
           }}
         >
-          <p align="left">UserId: {defaultdetails.UserID}</p>
-          <p align="left">UserName: {defaultdetails.Username}</p>
-          <p align="left">
-            Password: {"*".repeat(defaultdetails.Password.length)}
-          </p>
+          <p>UserId: {defaultdetails.Firstname}</p>
+          <p>UserName: {defaultdetails.Lastname}</p>
+          <p>UserName: {defaultdetails.Email}</p>
+          <p>UserName: {defaultdetails.Address}</p>
         </Card>
       </>
     </div>
   );
 }
 
-export default ViewUserDetails;
+export default ViewPersonalDetails;

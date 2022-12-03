@@ -69,8 +69,36 @@ const Home = () => {
 
   return (
     <>
-      <div>
-        <TestHome />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card card-container">
+              <div className="mb-3 d-grid">
+                <button className="btn btn-primary" onClick={getExchangeRate}>
+                  <span>Get Exchange Rate</span>
+                </button>
+              </div>
+
+              <div className="mb-3 d-grid">
+                <button className="btn btn-primary" onClick={createNewUser}>
+                  <span>Create New User</span>
+                </button>
+              </div>
+
+              <div className="mb-3 d-grid">
+                <button className="btn btn-primary" onClick={deleteUser}>
+                  <span>Delete User</span>
+                </button>
+              </div>
+
+              <div className="mb-3 d-grid">
+                <button className="btn btn-primary" onClick={getProtectedRoute}>
+                  <span>Get Protected Route</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
