@@ -1,2 +1,2 @@
-# TT-11
-Tektrek  1 December Group 11
+# DBS TechTrek 1
+This repository is meant for DBS TechTrek 1. Please follow the instructions of the organizers.
