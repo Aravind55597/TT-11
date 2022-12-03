@@ -21,7 +21,6 @@ const AuthContextProvider = (props) => {
         let authItem = localStorage.getItem("user"); 
         if (authItem) {
             authItem = JSON.parse(authItem); 
-
             setUser({info: jwt_decode(authItem.token), token:authItem.token})
         }
     }, []);
@@ -35,6 +34,7 @@ const AuthContextProvider = (props) => {
           .then((response) => {
             if (response.data.token) {
               localStorage.setItem("user", JSON.stringify({token: response.data.token}));
+              console.log(jwt_decode(response.data.token))
               setUser({info: jwt_decode(response.data.token), token:response.data.token})
             }
             return response.data;

@@ -26,15 +26,15 @@ const Header = () => {
             </Link>
           </li>
 
-          {/* {showModeratorBoard && (
+          {auth.user && (
             <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
-                Moderator Board
+              <Link to={"/testhome"} className="nav-link">
+                testhome
               </Link>
             </li>
           )}
 
-          {showAdminBoard && (
+          {/* {showAdminBoard && (
             <li className="nav-item">
               <Link to={"/admin"} className="nav-link">
                 Admin Board
