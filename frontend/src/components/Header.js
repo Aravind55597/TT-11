@@ -18,11 +18,11 @@ const Header = () => {
         {/* <Link to={"/"} className="navbar-brand">
           DBS
         </Link> */}
-        <a href="/"><img width="96px" alt="profile-img" src={DbsLogo}/></a>
+        {/* <a href="/"><img width="96px" alt="profile-img" src={DbsLogo}/></a> */}
         <div className="navbar-nav me-auto">
           <li className="nav-item">
-            <Link to={"/"} className="nav-link">
-            DbsLogo
+          <Link to={"/"} className="nav-link" >
+            <img width="96px" alt="profile-img" src={DbsLogo} />
             </Link>
           </li>
 
