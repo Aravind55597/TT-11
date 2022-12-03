@@ -33,10 +33,10 @@ def login():
 
     '''
     try:
-        username = request.json.get("username", None)
-        password = request.json.get("password", None)
+        username = request.json.get("Username", None)
+        password = request.json.get("Password", None)
 
-        existingUser = User.query.filter( (User.username == username) & (User.password == password) ).first(); 
+        existingUser = User.query.filter( (User.Username == username) & (User.Password == password) ).first(); 
 
         if not existingUser:
             return jsonify(
@@ -46,11 +46,11 @@ def login():
                 }
             ), 404
 
-        additional_claims = {"id": existingUser.id,
-                            "name": existingUser.name, "username": existingUser.username}
+        additional_claims = {"UserID": existingUser.UserID,"FirstName": existingUser.Firstname , "LastName":existingUser.Lastname, 
+        "Email":existingUser.Email , "Address": existingUser.Address , "Username":existingUser.Username}
 
         access_token = create_access_token(
-            identity=existingUser.id, additional_claims=additional_claims)
+            identity=existingUser.UserID, additional_claims=additional_claims)
 
         return jsonify({
             "code": 200,

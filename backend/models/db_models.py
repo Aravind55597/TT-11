@@ -24,7 +24,6 @@ class ScheduledTransaction(db.Model):
 
 class User(db.Model):
     __tablename__ = 'User'
-
     UserID = db.Column(db.Integer, primary_key=True)
     Username = db.Column(db.String(20))
     Password = db.Column(db.String(20))
@@ -32,4 +31,4 @@ class User(db.Model):
     Lastname = db.Column(db.String(255))
     Email = db.Column(db.String(255))
     Address = db.Column(db.String(255))
-    OptIntoPhyStatements = db.Column(db.BIT(1))
+    OptIntoPhyStatements = db.Column(db.Boolean)
