@@ -92,3 +92,8 @@ PUT /user/<UserID>
 	pipenv run start
 	```
 
+### Deployed links 
+
+Front end : https://front.hackathonproject.uk
+
+Back end : https://back.hackathonproject.uk
