@@ -8,6 +8,8 @@ import ViewUserDetails from "./ViewUserDetails";
 import ViewPersonalDetails from "./ViewPersonalDetails";
 
 function TestHome() {
+  const auth = useAuth();
+  console.log(auth)
   // simple get request that manually add config. Since some API endpoint can be access without user authentication
   async function getProtectedRoute() {
     try {
@@ -18,9 +20,10 @@ function TestHome() {
     }
   }
 
-  const auth = useAuth();
+
   var config = {};
-  if (auth.user !== null) {
+
+  if (auth !== null) {
     const bearer_token = `Bearer ${auth.user.token}`;
     config = {
       headers: {
@@ -29,22 +32,22 @@ function TestHome() {
     };
   }
 
-  const user_ID = auth.UserID;
-  const token = auth.token;
+  // const user_ID = auth.user.info.UserID;
+  // const token = auth.token;
 
-  async function getUserDetails() {
-    try {
-      const response = await axios.get(
-        hosturl + "	/user/" + String(user_ID),
-        config
-      );
-      console.log(response.data);
-      return data;
-    } catch (error) {
-      console.error(error.response.data);
-    }
-  }
-  getUserDetails();
+  // async function getUserDetails() {
+  //   try {
+  //     const response = await axios.get(
+  //       hosturl + "	/user/" + String(user_ID),
+  //       config
+  //     );
+  //     console.log(response.data);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(error.response.data);
+  //   }
+  // }
+  // getUserDetails();
 
   return (
     <div className="container-test">
