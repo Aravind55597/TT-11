@@ -1,6 +1,6 @@
 import React from "react";
 import { Space, Table, Button } from "antd";
-import data from "../data/ScheduledTransactions.json";
+import hardData from "../data/ScheduledTransactions.json";
 
 const columns = [
   {
@@ -43,16 +43,21 @@ const columns = [
   },
 ];
 
-// convert timestamp to date
-data = data.map((each) => {
-  console.log(new Date(each.Date));
-  return {
-    ...each,
-    Date: new Date(each.Date).toString().split("GMT")[0],
-  };
-});
+function App(data) {
+  // convert timestamp to date
+  const transactionData = data?.data.map((each) => {
+    return {
+      ...each,
+      Date: new Date(each.Date).toString().split("GMT")[0],
+    };
+  });
+  return (
+    <Table
+      columns={columns}
+      dataSource={transactionData}
+      scroll={{ x: 1300 }}
+    />
+  );
+}
 
-const App = () => (
-  <Table columns={columns} dataSource={data} scroll={{ x: 1300 }} />
-);
 export default App;
