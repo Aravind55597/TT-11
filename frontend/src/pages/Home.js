@@ -3,8 +3,6 @@ import React from "react";
 import axios from "axios";
 import hosturl from "../hosturl.js";
 import { useAuth } from "../contexts/authContext.js";
-
-import Table from "../components/Table.js";
 import AccountInfo from "../components/AccountInfo.js";
 const Home = () => {
   const auth = useAuth();
@@ -72,7 +70,6 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <Table></Table>
         <div className="row">
           <div className="col-md-12">
             <div className="card">
