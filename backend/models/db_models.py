@@ -28,6 +28,16 @@ class ScheduledTransaction(db.Model):
     TransactionAmount = db.Column(db.Numeric(10, 2))
     Comment = db.Column(db.String(255))
 
+    def json(self):
+        return {
+            "TransactionID": self.TransactionID,
+            "AccountID": self.AccountID,
+            "ReceivingAccountID": self.ReceivingAccountID,
+            "Date": self.Date,
+            "TransactionAmount": self.TransactionAmount,
+            "Comment": self.Comment
+        }
+
 
 class User(db.Model):
     __tablename__ = 'User'
@@ -39,3 +49,14 @@ class User(db.Model):
     Email = db.Column(db.String(255))
     Address = db.Column(db.String(255))
     OptIntoPhyStatements = db.Column(db.Boolean)
+
+    def json(self):
+        return {
+            "UserID": self.UserID,
+            "Username": self.Username,
+            "Firstname": self.Firstname,
+            "Lastname": self.Lastname,
+            "Email": self.Email,
+            "Address": self.Address,
+            "OptIntoPhyStatements": self.OptIntoPhyStatements
+        }
