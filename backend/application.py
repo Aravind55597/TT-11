@@ -11,6 +11,8 @@ from routes.schedRoute import schedRoute;
 
 from routes.accountRoute import accountRoute; 
 
+from routes.deleteTransactionRoute import deleteTransactionRoute; 
+
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>---------------------------------------------------------
 from routes.userRoute import userRoute; 
 # from routes.walletRoute import walletRoute; 
@@ -45,6 +47,7 @@ application.register_blueprint(accountRoute, url_prefix='/account')
 
 application.register_blueprint(schedRoute, url_prefix='/transaction')
 
+application.register_blueprint(deleteTransactionRoute, url_prefix='/transaction')
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>----------------------------------------------------------------------
 application.register_blueprint(userRoute, url_prefix='/user')
