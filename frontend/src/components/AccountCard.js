@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from "antd";
+import { Card} from "antd";
+import Table from "../components/Table.js";
 function AccountCard({ account }) {
   console.log(account);
   return (
@@ -12,6 +13,7 @@ function AccountCard({ account }) {
       extra={<a href="#">More</a>}
     >
       Balance: {account.AccountBalance}
+      <Table></Table>
     </Card>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Space, Table, Tag } from 'antd';
+
 const columns = [
   {
     title: 'Transaction ID',
@@ -22,7 +23,7 @@ const columns = [
     dataIndex:'Date',
     key:'Date',
   },
-  {
+  { 
     title:'Transaction Amount',
     dataIndex: 'TransactionAmount',
     key:'TransactionAmount',
