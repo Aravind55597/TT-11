@@ -18,6 +18,7 @@ class BankAccount(db.Model):
             "AccountBalance": self.AccountBalance,
         }
 
+
 class ScheduledTransaction(db.Model):
     __tablename__ = 'ScheduledTransactions'
 
@@ -60,3 +61,4 @@ class User(db.Model):
             "Address": self.Address,
             "OptIntoPhyStatements": self.OptIntoPhyStatements
         }
+
