@@ -11,7 +11,9 @@ function AccountInfo() {
   return (
     <Card title={Username}>
       {UserAccounts.length &&
-        UserAccounts.map((account) => <AccountCard account={account} />)}
+        UserAccounts.map((account, index) => (
+          <AccountCard key={index} account={account} />
+        ))}
     </Card>
   );
 }
