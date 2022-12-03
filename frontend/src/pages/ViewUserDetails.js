@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Card } from "antd";
+import "./TestHome.css";
 
-function ViewUserDetails() {
+function ViewUserDetails(props) {
   const defaultdetails = {
     UserID: "1",
     Username: "qwer",
@@ -14,28 +15,46 @@ function ViewUserDetails() {
   };
 
   return (
-    <div
-      style={{
-        display: "block",
-        width: "100vh",
-        padding: 30,
-      }}
-    >
-      <>
-        <Card
-          title="User Details"
-          bordered
-          style={{
-            width: 500,
-            border: "2px solid black",
-            "justify-content": "flex-start",
-          }}
-        >
-          <p>UserId: {defaultdetails.UserID}</p>
-          <p>UserName: {defaultdetails.Username}</p>
-          <p>Password: {"*".repeat(defaultdetails.Password.length)}</p>
-        </Card>
-      </>
+    <div className="card-container ">
+      <Card
+        title="User Details"
+        bordered
+        style={{
+          width: 500,
+          border: "2px solid black",
+          justifyContent: "flex-start",
+        }}
+      >
+        <div className="line-container">
+          <div className="text-container">
+            <p>UserId: </p>
+          </div>
+          <div className="text-container">
+            <p>{props.userid}</p>
+          </div>
+          <div className="empty_action"> </div>
+        </div>
+
+        <div className="line-container">
+          <div className="text-container">
+            <p>UserName: </p>
+          </div>
+          <div className="text-container">
+            <p>{props.username}</p>
+          </div>
+          <div className="empty_action"> </div>
+        </div>
+
+        <div className="line-container">
+          <div className="text-container">
+            <p>Password: </p>
+          </div>
+          <div className="text-container">
+            <p>{"*".repeat(props.password.length)}</p>
+          </div>
+          <div className="action_button">Change Password</div>
+        </div>
+      </Card>
     </div>
   );
 }

@@ -8,19 +8,19 @@ from flask_jwt_extended import get_jwt_identity
 import json
 
 
-# @jwt_required()
+@jwt_required()
 def updateUserDetails(userId):
     try:
         # check if the userId corresponds to authenticated user
-        # currUserId = get_jwt_identity()
+        currUserId = get_jwt_identity()
 
-        # if (userId != currUserId):
-        #     return jsonify(
-        #         {
-        #             "code": 401,
-        #             "message": "Unauthorized"
-        #         }
-        # ), 500
+        if (userId != currUserId):
+            return jsonify(
+                {
+                    "code": 401,
+                    "message": "Unauthorized"
+                }
+        ), 500
 
         newAddress = request.json.get("Address"); 
         newEmail = request.json.get("Email");

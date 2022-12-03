@@ -1,43 +1,63 @@
 # DBS TechTrek 1
 This repository is meant for DBS TechTrek 1. Please follow the instructions of the organizers.
 
-### REST API Documentation
+# REST API Documentation
 
-# Authentication
+### Authentication
 POST /auth/login
+
+```
+Request Body: 
+
     {
         "Username",
         "Password"
     }
 
-# Get list of Bank account by UserID
-GET /account/<UserID>
+### Get list of Bank account by UserID
+GET /accounts/<UserID>
 
-# Get list of Transactions by AccountID
-GET /transaction/<UserID>
+### Get list of Transactions by AccountID
+GET /transactions/<UserID>
 
-# Get User details by UserID
+### Get User details by UserID
 GET /user/<UserID>
 
-# Create a new Scheduled Transaction
+### Create a new Scheduled Transaction
 POST /transaction/
-    {
-		“AccountID” , 
-		“ReceivingAccountID” , 
-		“Date” , 
-		“TransactionAmount” , 
-		“Comment” , 
-    }
 
-# Delete Scheduled Transaction by TransactionID
+
+    ```
+    Request Body: 
+
+        {
+            “AccountID” , 
+            “ReceivingAccountID” , 
+            “Date” , 
+            “TransactionAmount” , 
+            “Comment” , 
+        }
+
+
+    ```
+
+
+### Delete Scheduled Transaction by TransactionID
 DELETE /transaction/<TransactionID>
 
-# Provide, change or remove their address and email
+### Provide, change or remove their address and email
 PUT /user/<UserID>
-    {
-        "Address",
-        "Email"
-    }
+
+
+    ```
+        Request Body: 
+
+        {
+            "Address",
+            "Email"
+        }
+
+    ```
 
 ### Initial Set Up
 
@@ -92,3 +112,8 @@ PUT /user/<UserID>
 	pipenv run start
 	```
 
+### Deployed links 
+
+Front end : https://front.hackathonproject.uk
+
+Back end : https://back.hackathonproject.uk

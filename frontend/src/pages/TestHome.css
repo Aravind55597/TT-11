@@ -1,4 +1,28 @@
 .container-test {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.text-container {
+  width: 20rem;
+}
+
+.line-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-container {
+  padding: 3rem;
+}
+
+.action_button {
+  width: 30rem;
+  color: red;
+  text-decoration: underline;
+}
+
+.empty_action {
+  width: 30rem;
 }

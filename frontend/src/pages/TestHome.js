@@ -7,17 +7,59 @@ import hosturl from "../hosturl";
 import ViewUserDetails from "./ViewUserDetails";
 import ViewPersonalDetails from "./ViewPersonalDetails";
 
-function TestHome() {
-  const user_ID = auth.info.UserID;
-  const token = auth.token;
+const defaultdetails = {
+  UserID: "1",
+  Username: "qwer",
+  Password: "monkeyisthebest",
+  Firstname: "first",
+  Lastname: "last",
+  Email: "asd@a.com",
+  Address: "123 street",
+};
 
-  let navigate = useNavigate();
-  const auth = useAuth();
+function TestHome() {
+  // const auth = useAuth();
+  // const user_ID = auth.user.info.UserID;
+  // const token = auth.token;
+  // var config = {};
+
+  // if (auth !== null) {
+  //   const bearer_token = `Bearer ${auth.user.token}`;
+  //   config = {
+  //     headers: {
+  //       Authorization: bearer_token,
+  //     },
+  //   };
+  // }
+
+  // async function getUserDetails() {
+  //   try {
+  //     const response = await axios.get(
+  //       hosturl + "	/user/" + String(user_ID),
+  //       config
+  //     );
+  //     console.log(response.data);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(error.response.data);
+  //   }
+  // }
+  // getUserDetails();
+
   return (
     <div className="container-test">
-      <ViewUserDetails></ViewUserDetails>
+      <ViewUserDetails
+        userid={defaultdetails.UserID}
+        username={defaultdetails.Username}
+        password={defaultdetails.Password}
+      ></ViewUserDetails>
 
-      <ViewPersonalDetails></ViewPersonalDetails>
+      <ViewPersonalDetails
+        Firstname={defaultdetails.Firstname}
+        Lastname={defaultdetails.Lastname}
+        Email={defaultdetails.Email}
+        Address={defaultdetails.Address}
+      ></ViewPersonalDetails>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { useAuth } from "../contexts/authContext.js";
 
 import Table from "../components/Table.js";
 import AccountInfo from "../components/AccountInfo.js";
+import TestHome from "./TestHome.js";
 const Home = () => {
   const auth = useAuth();
   // get request
