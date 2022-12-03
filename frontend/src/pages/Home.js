@@ -4,6 +4,7 @@ import axios from "axios";
 import hosturl from "../hosturl.js";
 import { useAuth } from "../contexts/authContext.js";
 import AccountInfo from "../components/AccountInfo.js";
+
 const Home = () => {
   const auth = useAuth();
   // get request

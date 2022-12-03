@@ -6,6 +6,8 @@ import axios from "axios";
 import hosturl from "../hosturl.js";
 import { useAuth } from "../contexts/authContext.js";
 import { useNavigate } from "react-router-dom";
+import Modal from "../components/Modal.js";
+
 const { Text } = Typography;
 
 function AccountCard({ account }) {
@@ -65,7 +67,7 @@ function AccountCard({ account }) {
 
         <Text italic>{`Account Balance: ${account.AccountBalance}`}</Text>
       </div>
-      {accountDetails.length > 0 && <Table data={accountDetails} />}
+      <Table></Table>
       <Button> Add Transaction </Button>
     </Card>
   );
