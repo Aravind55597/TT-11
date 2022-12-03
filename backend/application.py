@@ -9,7 +9,7 @@ from routes.authRoute import authRoute;
 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>---------------------------------------------------------
-# from routes.exchangeRateRoute import exchangeRateRoute; 
+from routes.userRoute import userRoute; 
 # from routes.walletRoute import walletRoute; 
 # from routes.transactionRoute import transactionRoute; 
 #-------------------------------------------------------------------
@@ -41,7 +41,7 @@ application.register_blueprint(authRoute, url_prefix='/auth')
 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>----------------------------------------------------------------------
-# application.register_blueprint(exchangeRateRoute, url_prefix='/exchange_rate')
+application.register_blueprint(userRoute, url_prefix='/user')
 # application.register_blueprint(walletRoute, url_prefix='/wallet')
 # application.register_blueprint(transactionRoute, url_prefix='/transaction')
 #---------------------------------------------------------------------------------------------------------------------

@@ -11,6 +11,7 @@ class BankAccount(db.Model):
     AccountBalance = db.Column(db.Numeric(10, 2))
 
 
+
 class ScheduledTransaction(db.Model):
     __tablename__ = 'ScheduledTransactions'
 
@@ -32,3 +33,4 @@ class User(db.Model):
     Email = db.Column(db.String(255))
     Address = db.Column(db.String(255))
     OptIntoPhyStatements = db.Column(db.Boolean)
+
