@@ -45,7 +45,7 @@ def healthCheck():
 application.register_blueprint(authRoute, url_prefix='/auth')
 application.register_blueprint(accountRoute, url_prefix='/accounts')
 
-application.register_blueprint(schedRoute, url_prefix='/transaction')
+application.register_blueprint(schedRoute, url_prefix='/transactions')
 
 application.register_blueprint(deleteTransactionRoute, url_prefix='/transaction')
 
