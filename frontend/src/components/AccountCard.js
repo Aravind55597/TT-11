@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Button } from "antd";
 import { Space, Typography } from "antd";
 import Table from "../components/Table.js";
+import axios from "axios";
+import hosturl from "../hosturl.js";
 
 const { Text } = Typography;
 
 function AccountCard({ account }) {
+  const [accountDetails, setAccountDetails] = useState({});
+
+  useEffect(() => {
+    async function fetchTransaction(userData) {
+      try {
+        const AccountID = userData.AccountID;
+        const response = await axios.get(hosturl + `/transaction/` + AccountID);
+        const data = response.data.data;
+        setAccountDetails(data);
+        return data;
+      } catch (error) {
+        console.error(error.response.data);
+      }
+    }
+    const formData = {
+      AccountID: account.AccountID,
+    };
+    fetchTransaction(formData);
+  }, [account]);
+
   return (
     <Card
       style={{
@@ -23,7 +45,7 @@ function AccountCard({ account }) {
 
         <Text italic>{`Account Balance: ${account.AccountBalance}`}</Text>
       </div>
-      <Table></Table>
+      {accountDetails.length > 0 && <Table data={accountDetails} />}
       <Button> Add Transaction </Button>
     </Card>
   );
