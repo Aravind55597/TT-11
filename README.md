@@ -52,8 +52,43 @@ PUT /user/<UserID>
 
 ### FRONTEND GUIDE 
 
+	
+1) 
+	```
+	cd frontend
+	```
+	
+	
+2) 
+	```
+	npm install 
+	```
 
+3) 
+	```
+	npm start
+	```
 
 
 ### BACKEND GUIDE 
+
+
+1) 
+	```
+	cd backend
+	```
+	
+	
+2) 
+	Install pipenv  https://pypi.org/project/pipenv/ 
+
+3) 
+	```
+	pipenv install
+	```
+
+4) 
+	```
+	pipenv run start
+	```
 
