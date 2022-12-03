@@ -7,6 +7,8 @@ import os;
 #--------AUTH----------------------------
 from routes.authRoute import authRoute; 
 
+from routes.schedRoute import schedRoute;
+
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>---------------------------------------------------------
 # from routes.exchangeRateRoute import exchangeRateRoute; 
@@ -38,6 +40,8 @@ def healthCheck():
 
 # <AUTH ROUTE>-------------------------------------------------------------------------------------------------------------------
 application.register_blueprint(authRoute, url_prefix='/auth')
+
+application.register_blueprint(schedRoute, url_prefix='/transaction')
 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>----------------------------------------------------------------------
