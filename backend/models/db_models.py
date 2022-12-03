@@ -14,7 +14,7 @@ class BankAccount(db.Model):
 class ScheduledTransaction(db.Model):
     __tablename__ = 'ScheduledTransactions'
 
-    TransactionID = db.Column(db.Integer, primary_key=True, nullable=False)
+    TransactionID = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True)
     AccountID = db.Column(db.Integer, primary_key=True, nullable=False)
     ReceivingAccountID = db.Column(db.Integer)
     Date = db.Column(db.String(255))
