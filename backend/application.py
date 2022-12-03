@@ -7,9 +7,14 @@ import os;
 #--------AUTH----------------------------
 from routes.authRoute import authRoute; 
 
+from routes.schedRoute import schedRoute;
+
+from routes.accountRoute import accountRoute; 
+
+from routes.deleteTransactionRoute import deleteTransactionRoute; 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>---------------------------------------------------------
-# from routes.exchangeRateRoute import exchangeRateRoute; 
+from routes.userRoute import userRoute; 
 # from routes.walletRoute import walletRoute; 
 # from routes.transactionRoute import transactionRoute; 
 #-------------------------------------------------------------------
@@ -38,10 +43,14 @@ def healthCheck():
 
 # <AUTH ROUTE>-------------------------------------------------------------------------------------------------------------------
 application.register_blueprint(authRoute, url_prefix='/auth')
+application.register_blueprint(accountRoute, url_prefix='/account')
 
+application.register_blueprint(schedRoute, url_prefix='/transactions')
+
+application.register_blueprint(deleteTransactionRoute, url_prefix='/transaction')
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>----------------------------------------------------------------------
-# application.register_blueprint(exchangeRateRoute, url_prefix='/exchange_rate')
+application.register_blueprint(userRoute, url_prefix='/user')
 # application.register_blueprint(walletRoute, url_prefix='/wallet')
 # application.register_blueprint(transactionRoute, url_prefix='/transaction')
 #---------------------------------------------------------------------------------------------------------------------
