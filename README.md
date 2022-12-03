@@ -1,25 +1,25 @@
 # DBS TechTrek 1
 This repository is meant for DBS TechTrek 1. Please follow the instructions of the organizers.
 
-### REST API Documentation
+# REST API Documentation
 
-# Authentication
+### Authentication
 POST /auth/login
     {
         "Username",
         "Password"
     }
 
-# Get list of Bank account by UserID
+### Get list of Bank account by UserID
 GET /account/<UserID>
 
-# Get list of Transactions by AccountID
+### Get list of Transactions by AccountID
 GET /transaction/<UserID>
 
-# Get User details by UserID
+### Get User details by UserID
 GET /user/<UserID>
 
-# Create a new Scheduled Transaction
+### Create a new Scheduled Transaction
 POST /transaction/
     {
 		“AccountID” , 
@@ -29,10 +29,10 @@ POST /transaction/
 		“Comment” , 
     }
 
-# Delete Scheduled Transaction by TransactionID
+### Delete Scheduled Transaction by TransactionID
 DELETE /transaction/<TransactionID>
 
-# Provide, change or remove their address and email
+### Provide, change or remove their address and email
 PUT /user/<UserID>
     {
         "Address",
