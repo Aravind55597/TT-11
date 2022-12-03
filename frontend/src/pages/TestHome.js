@@ -8,11 +8,22 @@ import ViewUserDetails from "./ViewUserDetails";
 import ViewPersonalDetails from "./ViewPersonalDetails";
 
 function TestHome() {
-  const user_ID = auth.info.UserID;
+  const auth = useAuth();
+  const user_ID = auth.user_ID;
   const token = auth.token;
 
   let navigate = useNavigate();
-  const auth = useAuth();
+
+  async function getUserDetails() {
+    try {
+      const response = await axios.get(hosturl + "/user/userId");
+      console.log(response.data);
+    } catch (error) {
+      console.error(error.response.data);
+    }
+  }
+  getUserDetails();
+
   return (
     <div className="container-test">
       <ViewUserDetails></ViewUserDetails>

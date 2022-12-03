@@ -31,10 +31,10 @@ function ViewPersonalDetails() {
             justifyContent: "flex-start",
           }}
         >
-          <p>UserId: {defaultdetails.Firstname}</p>
-          <p>UserName: {defaultdetails.Lastname}</p>
-          <p>UserName: {defaultdetails.Email}</p>
-          <p>UserName: {defaultdetails.Address}</p>
+          <p align="left">UserId: {defaultdetails.Firstname}</p>
+          <p align="left">UserName: {defaultdetails.Lastname}</p>
+          <p align="left">UserName: {defaultdetails.Email}</p>
+          <p align="left">UserName: {defaultdetails.Address}</p>
         </Card>
       </>
     </div>
