@@ -5,6 +5,8 @@ import "./TestHome.css";
 import Search from "antd/es/transfer/search";
 
 function ViewUserDetails(props) {
+  const [changePassword, SetChangePassword] = useState(false);
+
   return (
     <div className="card-container ">
       <Card
