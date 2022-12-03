@@ -7,6 +7,8 @@ import axios from "axios";
 import hosturl from "../hosturl.js";
 
 function AccountInfo() {
+  const UserAccounts = data.filter((account) => account.UserID === 1);
+  const Username = userData.filter((user) => user.UserID === 1)[0].Username;
   const [userAccounts, setUserAccounts] = useState({});
   useEffect(() => {
     async function getAccountDetails(userData) {
@@ -26,11 +28,10 @@ function AccountInfo() {
     getAccountDetails(formData);
   }, []);
 
-  const Username = userData.filter((user) => user.UserID === 1)[0].Username;
   return (
     <Card title={Username}>
-      {userAccounts.length &&
-        userAccounts.map((account, index) => (
+      {UserAccounts.length &&
+        UserAccounts.map((account, index) => (
           <AccountCard key={index} account={account} />
         ))}
     </Card>

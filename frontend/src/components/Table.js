@@ -15,11 +15,6 @@ const columns = [
     key: "ReceivingAccountID",
   },
   {
-    title: "ReceivingAccountID",
-    dataIndex: "ReceivingAccountID",
-    key: "ReceivingAccountID",
-  },
-  {
     title: "Date",
     dataIndex: "Date",
     key: "Date",

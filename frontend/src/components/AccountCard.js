@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "antd";
 import { Space, Typography } from "antd";
 import Table from "../components/Table.js";
+import Modal from "../components/Modal.js"
 
 const { Text } = Typography;
 
@@ -24,7 +25,7 @@ function AccountCard({ account }) {
         <Text italic>{`Account Balance: ${account.AccountBalance}`}</Text>
       </div>
       <Table></Table>
-      <Button> Add Transaction </Button>
+      <Modal> Add Transaction </Modal>
     </Card>
   );
 }
