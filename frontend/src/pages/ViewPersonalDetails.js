@@ -24,10 +24,41 @@ function ViewPersonalDetails(props) {
         justifyContent: "flex-start",
       }}
     >
-      <p align="left">UserId: {defaultdetails.Firstname}</p>
-      <p align="left">UserName: {defaultdetails.Lastname}</p>
-      <p align="left">UserName: {defaultdetails.Email}</p>
-      <p align="left">UserName: {defaultdetails.Address}</p>
+      <div className="line-container">
+        <div className="text-container">
+          <p>First Name: </p>
+        </div>
+        <div className="text-container">
+          <p>{props.Firstname}</p>
+        </div>
+      </div>
+
+      <div className="line-container">
+        <div className="text-container">
+          <p>Last Name: </p>
+        </div>
+        <div className="text-container">
+          <p>{props.Lastname}</p>
+        </div>
+      </div>
+
+      <div className="line-container">
+        <div className="text-container">
+          <p>Email: </p>
+        </div>
+        <div className="text-container">
+          <p>{props.Email}</p>
+        </div>
+      </div>
+
+      <div className="line-container">
+        <div className="text-container">
+          <p>Address: </p>
+        </div>
+        <div className="text-container">
+          <p>{props.Address}</p>
+        </div>
+      </div>
     </Card>
   );
 }

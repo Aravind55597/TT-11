@@ -30,7 +30,7 @@ function ViewUserDetails(props) {
             <p>UserId: </p>
           </div>
           <div className="text-container">
-            <p>{defaultdetails.UserID}</p>
+            <p>{props.userid}</p>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ function ViewUserDetails(props) {
             <p>UserName: </p>
           </div>
           <div className="text-container">
-            <p>{defaultdetails.Username}</p>
+            <p>{props.username}</p>
           </div>
         </div>
 
@@ -48,7 +48,7 @@ function ViewUserDetails(props) {
             <p>Password: </p>
           </div>
           <div className="text-container">
-            <p>{"*".repeat(defaultdetails.Password.length)}</p>
+            <p>{"*".repeat(props.password.length)}</p>
           </div>
         </div>
       </Card>

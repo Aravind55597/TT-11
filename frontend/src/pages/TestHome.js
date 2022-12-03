@@ -7,50 +7,59 @@ import hosturl from "../hosturl";
 import ViewUserDetails from "./ViewUserDetails";
 import ViewPersonalDetails from "./ViewPersonalDetails";
 
+const defaultdetails = {
+  UserID: "1",
+  Username: "qwer",
+  Password: "monkeyisthebest",
+  Firstname: "first",
+  Lastname: "last",
+  Email: "asd@a.com",
+  Address: "123 street",
+};
+
 function TestHome() {
-  // simple get request that manually add config. Since some API endpoint can be access without user authentication
-  async function getProtectedRoute() {
-    try {
-      const response = await axios.get(hosturl + "/user/protected", config);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error.response.data);
-    }
-  }
+  // const auth = useAuth();
+  // var config = {};
+  // if (auth.user !== null) {
+  //   const bearer_token = `Bearer ${auth.user.token}`;
+  //   config = {
+  //     headers: {
+  //       Authorization: bearer_token,
+  //     },
+  //   };
+  // }
 
-  const auth = useAuth();
-  var config = {};
-  if (auth.user !== null) {
-    const bearer_token = `Bearer ${auth.user.token}`;
-    config = {
-      headers: {
-        Authorization: bearer_token,
-      },
-    };
-  }
+  // const user_ID = auth.user.info.UserID;
+  // const token = auth.token;
 
-  const user_ID = auth.UserID;
-  const token = auth.token;
-
-  async function getUserDetails() {
-    try {
-      const response = await axios.get(
-        hosturl + "	/user/" + String(user_ID),
-        config
-      );
-      console.log(response.data);
-      return data;
-    } catch (error) {
-      console.error(error.response.data);
-    }
-  }
-  getUserDetails();
+  // async function getUserDetails() {
+  //   try {
+  //     const response = await axios.get(
+  //       hosturl + "	/user/" + String(user_ID),
+  //       config
+  //     );
+  //     console.log(response.data);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(error.response.data);
+  //   }
+  // }
+  // getUserDetails();
 
   return (
     <div className="container-test">
-      <ViewUserDetails></ViewUserDetails>
+      <ViewUserDetails
+        userid={defaultdetails.UserID}
+        username={defaultdetails.Username}
+        password={defaultdetails.Password}
+      ></ViewUserDetails>
 
-      <ViewPersonalDetails></ViewPersonalDetails>
+      <ViewPersonalDetails
+        Firstname={defaultdetails.Firstname}
+        Lastname={defaultdetails.Lastname}
+        Email={defaultdetails.Email}
+        Address={defaultdetails.Address}
+      ></ViewPersonalDetails>
     </div>
   );
 }
