@@ -46,7 +46,7 @@ def login():
                 }
             ), 404
 
-        additional_claims = {"UserID": existingUser.UserID,"FirstName": existingUser.Firstname , "LastName":existingUser.Lastname, 
+        additional_claims = {"UserID": existingUser.UserID,"Firstname": existingUser.Firstname , "Lastname":existingUser.Lastname, 
         "Email":existingUser.Email , "Address": existingUser.Address , "Username":existingUser.Username}
 
         access_token = create_access_token(
