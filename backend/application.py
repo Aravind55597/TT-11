@@ -6,7 +6,7 @@ import os;
 
 #--------AUTH----------------------------
 from routes.authRoute import authRoute; 
-
+from routes.accountRoute import accountRoute; 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>---------------------------------------------------------
 from routes.userRoute import userRoute; 
@@ -38,6 +38,7 @@ def healthCheck():
 
 # <AUTH ROUTE>-------------------------------------------------------------------------------------------------------------------
 application.register_blueprint(authRoute, url_prefix='/auth')
+application.register_blueprint(accountRoute, url_prefix='/account')
 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>----------------------------------------------------------------------
