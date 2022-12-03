@@ -31,6 +31,7 @@ function ViewPersonalDetails(props) {
         <div className="text-container">
           <p>{props.Firstname}</p>
         </div>
+        <div className="empty_action"> </div>
       </div>
 
       <div className="line-container">
@@ -40,6 +41,7 @@ function ViewPersonalDetails(props) {
         <div className="text-container">
           <p>{props.Lastname}</p>
         </div>
+        <div className="empty_action"> </div>
       </div>
 
       <div className="line-container">
@@ -49,6 +51,7 @@ function ViewPersonalDetails(props) {
         <div className="text-container">
           <p>{props.Email}</p>
         </div>
+        <div className="action_button">Change/Delete Email</div>
       </div>
 
       <div className="line-container">
@@ -58,6 +61,7 @@ function ViewPersonalDetails(props) {
         <div className="text-container">
           <p>{props.Address}</p>
         </div>
+        <div className="action_button">Change/Remove Address</div>
       </div>
     </Card>
   );

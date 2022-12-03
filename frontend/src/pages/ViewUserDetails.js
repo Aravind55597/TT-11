@@ -32,6 +32,7 @@ function ViewUserDetails(props) {
           <div className="text-container">
             <p>{props.userid}</p>
           </div>
+          <div className="empty_action"> </div>
         </div>
 
         <div className="line-container">
@@ -41,6 +42,7 @@ function ViewUserDetails(props) {
           <div className="text-container">
             <p>{props.username}</p>
           </div>
+          <div className="empty_action"> </div>
         </div>
 
         <div className="line-container">
@@ -50,6 +52,7 @@ function ViewUserDetails(props) {
           <div className="text-container">
             <p>{"*".repeat(props.password.length)}</p>
           </div>
+          <div className="action_button">Change Password</div>
         </div>
       </Card>
     </div>

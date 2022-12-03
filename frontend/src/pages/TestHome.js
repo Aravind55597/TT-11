@@ -18,34 +18,33 @@ const defaultdetails = {
 };
 
 function TestHome() {
-  const auth = useAuth();
-  var config = {};
+  // const auth = useAuth();
+  // const user_ID = auth.user.info.UserID;
+  // const token = auth.token;
+  // var config = {};
 
-  if (auth !== null) {
-    const bearer_token = `Bearer ${auth.user.token}`;
-    config = {
-      headers: {
-        Authorization: bearer_token,
-      },
-    };
-  }
+  // if (auth !== null) {
+  //   const bearer_token = `Bearer ${auth.user.token}`;
+  //   config = {
+  //     headers: {
+  //       Authorization: bearer_token,
+  //     },
+  //   };
+  // }
 
-  const user_ID = auth.user.info.UserID;
-  const token = auth.token;
-
-  async function getUserDetails() {
-    try {
-      const response = await axios.get(
-        hosturl + "	/user/" + String(user_ID),
-        config
-      );
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      console.error(error.response.data);
-    }
-  }
-  getUserDetails();
+  // async function getUserDetails() {
+  //   try {
+  //     const response = await axios.get(
+  //       hosturl + "	/user/" + String(user_ID),
+  //       config
+  //     );
+  //     console.log(response.data);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(error.response.data);
+  //   }
+  // }
+  // getUserDetails();
 
   return (
     <div className="container-test">

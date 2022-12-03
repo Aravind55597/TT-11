@@ -16,3 +16,13 @@
 .card-container {
   padding: 3rem;
 }
+
+.action_button {
+  width: 30rem;
+  color: red;
+  text-decoration: underline;
+}
+
+.empty_action {
+  width: 30rem;
+}
