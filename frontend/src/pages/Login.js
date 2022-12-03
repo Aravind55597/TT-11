@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 // import AuthService from "../services/auth.service";
 import DbsLogo from "../assets/DBS-Bank-logo.png";
 import { useAuth } from "../contexts/authContext";
+
 const Login = () => {
     let navigate = useNavigate();
     const auth = useAuth(); 
