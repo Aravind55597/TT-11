@@ -18,11 +18,11 @@
 }
 
 .action_button {
-  width: 30rem;
+  width: 8rem;
   color: red;
   text-decoration: underline;
 }
 
 .empty_action {
-  width: 30rem;
+  width: 16rem;
 }

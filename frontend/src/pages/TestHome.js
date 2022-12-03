@@ -18,9 +18,9 @@ const defaultdetails = {
 };
 
 function TestHome() {
-  const auth = useAuth();
-  const user_ID = auth.user.info.UserID;
-  console.log(user_ID)
+  // const auth = useAuth();
+  // const user_ID = auth.user.info.UserID;
+  // console.log(user_ID)
   // const token = auth.token;
   // var config = {};
 

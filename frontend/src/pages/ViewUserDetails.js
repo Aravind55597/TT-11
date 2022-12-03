@@ -4,16 +4,6 @@ import { Card } from "antd";
 import "./TestHome.css";
 
 function ViewUserDetails(props) {
-  const defaultdetails = {
-    UserID: "1",
-    Username: "qwer",
-    Password: "monkeyisthebest",
-    Firstname: "first",
-    Lastname: "last",
-    Email: "asd@a.com",
-    Address: "123 street",
-  };
-
   return (
     <div className="card-container ">
       <Card
