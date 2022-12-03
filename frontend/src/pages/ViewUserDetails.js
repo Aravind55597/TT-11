@@ -23,7 +23,7 @@ function ViewUserDetails() {
     >
       <>
         <Card
-          title="PersonalDetails"
+          title="User Details"
           bordered
           style={{
             width: 500,
@@ -31,9 +31,11 @@ function ViewUserDetails() {
             justifyContent: "flex-start",
           }}
         >
-          <p>UserId: {defaultdetails.UserID}</p>
-          <p>UserName: {defaultdetails.Username}</p>
-          <p>Password: {"*".repeat(defaultdetails.Password.length)}</p>
+          <p align="left">UserId: {defaultdetails.UserID}</p>
+          <p align="left">UserName: {defaultdetails.Username}</p>
+          <p align="left">
+            Password: {"*".repeat(defaultdetails.Password.length)}
+          </p>
         </Card>
       </>
     </div>
