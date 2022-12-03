@@ -3,7 +3,7 @@ import { Card, Button } from "antd";
 import { Space, Typography } from "antd";
 import Table from "../components/Table.js";
 
-const { Text, Link } = Typography;
+const { Text } = Typography;
 
 function AccountCard({ account }) {
   return (

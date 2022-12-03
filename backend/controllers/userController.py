@@ -22,17 +22,17 @@ def updateUserDetails(userId):
         #         }
         # ), 500
 
-        newAddress = request.json.get("Address"); 
-        newEmail = request.json.get("Email");
+        newAddress = request.json.get("Address")
+        newEmail = request.json.get("Email")
 
-        #retrieve user 
+        # retrieve user
 
-        existingUser = User.query.filter(User.UserID==userId).first(); 
-        
-        if(newAddress): 
-            existingUser.Address = newAddress; 
-        if(newEmail): 
-            existingUser.Email=newEmail; 
+        existingUser = User.query.filter(User.UserID == userId).first()
+
+        if (newAddress):
+            existingUser.Address = newAddress
+        if (newEmail):
+            existingUser.Email = newEmail
 
         db.session.commit()
 
@@ -51,4 +51,3 @@ def updateUserDetails(userId):
                 "message": "Server Error"
             }
         ), 500
-
