@@ -29,8 +29,8 @@ const AuthContextProvider = (props) => {
     const login = (username, password) => {
         return axios
           .post(API_URL + "login", {
-            username,
-            password,
+            Username: username,
+            Password:password,
           })
           .then((response) => {
             if (response.data.token) {
