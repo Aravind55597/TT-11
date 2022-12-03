@@ -5,18 +5,6 @@ import "./TestHome.css";
 import Search from "antd/es/transfer/search";
 
 function ViewUserDetails(props) {
-  const defaultdetails = {
-    UserID: "1",
-    Username: "qwer",
-    Password: "monkeyisthebest",
-    Firstname: "first",
-    Lastname: "last",
-    Email: "asd@a.com",
-    Address: "123 street",
-  };
-
-  const [changePassword, SetChangePassword] = useState(false);
-
   return (
     <div className="card-container ">
       <Card
