@@ -39,6 +39,56 @@ PUT /user/<UserID>
         "Email"
     }
 
+### Initial Set Up
+
+# Environment variables (.env values for backend)
+
+| Environment Variable  | Value |
+| ------------- | ------------- |
+| SQLALCHEMY_DATABASE_URI  | mysql://username:hostname:port/Bank |
+| JWT_SECRET_KEY  | jwt_secret_key  |
+| FLASK_RUN_PORT | 5000  |
+| FLASK_RUN_HOST  | 0.0.0.0  |
+
+### FRONTEND GUIDE 
+
+	
+1) 
+	```
+	cd frontend
+	```
+	
+	
+2) 
+	```
+	npm install 
+	```
+
+3) 
+	```
+	npm start
+	```
 
 
+### BACKEND GUIDE 
+
+
+1) 
+	```
+	cd backend
+	```
+	
+	
+2) 
+	Install pipenv  https://pypi.org/project/pipenv/ 
+
+3) 
+	```
+	pipenv install
+	```
+
+4) 
+	```
+	pipenv run start
+	```
 
