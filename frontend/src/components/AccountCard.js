@@ -4,17 +4,41 @@ import { Space, Typography } from "antd";
 import Table from "../components/Table.js";
 import axios from "axios";
 import hosturl from "../hosturl.js";
-
+import { useAuth } from "../contexts/authContext.js";
+import { useNavigate } from "react-router-dom";
 const { Text } = Typography;
 
 function AccountCard({ account }) {
+  const navigate = useNavigate();
   const [accountDetails, setAccountDetails] = useState({});
 
+  const auth = useAuth();
+
   useEffect(() => {
+    if (auth.user === null) {
+      navigate("/login");
+    } else {
+      var config = {};
+      const bearer_token = `Bearer ${auth.user.token}`;
+      config = {
+        headers: {
+          Authorization: bearer_token,
+        },
+      };
+
+      const formData = {
+        AccountID: account.AccountID,
+      };
+      fetchTransaction(formData);
+    }
+
     async function fetchTransaction(userData) {
       try {
         const AccountID = userData.AccountID;
-        const response = await axios.get(hosturl + `/transaction/` + AccountID);
+        const response = await axios.get(
+          hosturl + `/transaction/` + AccountID,
+          config
+        );
         const data = response.data.data;
         setAccountDetails(data);
         return data;
@@ -22,10 +46,6 @@ function AccountCard({ account }) {
         console.error(error.response.data);
       }
     }
-    const formData = {
-      AccountID: account.AccountID,
-    };
-    fetchTransaction(formData);
   }, [account]);
 
   return (
