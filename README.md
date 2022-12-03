@@ -22,11 +22,11 @@ GET /user/<UserID>
 # Create a new Scheduled Transaction
 POST /transaction/
     {
-		“AccountID”: , 
-		“ReceivingAccountID”: , 
-		“Date”: , 
-		“TransactionAmount”: , 
-		“Comment”: , 
+		“AccountID” , 
+		“ReceivingAccountID” , 
+		“Date” , 
+		“TransactionAmount” , 
+		“Comment” , 
     }
 
 # Delete Scheduled Transaction by TransactionID
