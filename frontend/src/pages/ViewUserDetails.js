@@ -6,6 +6,10 @@ import Search from "antd/es/transfer/search";
 
 function ViewUserDetails(props) {
   const [changePassword, SetChangePassword] = useState(false);
+  const [newPassword, setNewPassword] = useState("");
+  const ChangePassword = (event) => {
+    setNewPassword(event.target.value);
+  };
 
   return (
     <div className="card-container ">
@@ -48,40 +52,40 @@ function ViewUserDetails(props) {
           <div
             className="action_button"
             onClick={() => {
+              console.log("HIHIHI");
               SetChangePassword(true);
             }}
+            type="button"
           >
             Change Password
           </div>
         </div>
+
+        <div>
+          <div className="line-container"></div>
+        </div>
         {changePassword ? (
-          <div>
-            <div className="line-container">
-              <div
-                className="action_button"
-                onClick={() => {
-                  SetChangePassword(true);
-                }}
-              >
-                <Input
-                  placeholder="Enter new Password"
-                  onSearch={(value) => console.log(value)}
-                  style={{ width: 200 }}
-                />
-                <Button
-                  onClick={() => {
-                    SetChangePassword(false);
-                    console.log("Close");
-                  }}
-                >
-                  Change
-                </Button>
-              </div>
-              ;
-            </div>
-          </div>
+          <>
+            <Input
+              placeholder="Enter new Password"
+              onSearch={(value) => console.log(value)}
+              style={{ width: 200 }}
+              onChange={ChangePassword}
+              value={newPassword}
+            />
+
+            <Button
+              onClick={() => {
+                SetChangePassword(false);
+                console.log("New Password:", newPassword);
+                setNewPassword("");
+              }}
+            >
+              Change
+            </Button>
+          </>
         ) : (
-          <br></br>
+          <></>
         )}
       </Card>
     </div>
