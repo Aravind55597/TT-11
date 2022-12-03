@@ -11,8 +11,20 @@ function TestHome() {
   const user_ID = auth.info.UserID;
   const token = auth.token;
 
+<<<<<<< Updated upstream
   let navigate = useNavigate();
   const auth = useAuth();
+=======
+  async function getUserDetails() {
+    try {
+      const response = await axios.get(hosturl + "	/user/userId");
+      console.log(response.data);
+    } catch (error) {
+      console.error(error.response.data);
+    }
+  }
+  getUserDetails();
+>>>>>>> Stashed changes
   return (
     <div className="container-test">
       <ViewUserDetails></ViewUserDetails>
