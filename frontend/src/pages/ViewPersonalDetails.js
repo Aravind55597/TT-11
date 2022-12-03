@@ -21,43 +21,13 @@ function ViewPersonalDetails(props) {
       style={{
         width: 500,
         border: "2px solid black",
+        justifyContent: "flex-start",
       }}
     >
-      <div className="line-container">
-        <div className="text-container">
-          <p>First Name: </p>
-        </div>
-        <div className="text-container">
-          <p>{defaultdetails.Firstname}</p>
-        </div>
-      </div>
-
-      <div className="line-container">
-        <div className="text-container">
-          <p>Last Name: </p>
-        </div>
-        <div className="text-container">
-          <p>{defaultdetails.Lastname}</p>
-        </div>
-      </div>
-
-      <div className="line-container">
-        <div className="text-container">
-          <p>Email: </p>
-        </div>
-        <div className="text-container">
-          <p>{defaultdetails.Email}</p>
-        </div>
-      </div>
-
-      <div className="line-container">
-        <div className="text-container">
-          <p>Address: </p>
-        </div>
-        <div className="text-container">
-          <p>{defaultdetails.Address}</p>
-        </div>
-      </div>
+      <p align="left">UserId: {defaultdetails.Firstname}</p>
+      <p align="left">UserName: {defaultdetails.Lastname}</p>
+      <p align="left">UserName: {defaultdetails.Email}</p>
+      <p align="left">UserName: {defaultdetails.Address}</p>
     </Card>
   );
 }
