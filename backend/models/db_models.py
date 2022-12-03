@@ -32,4 +32,4 @@ class User(db.Model):
     Lastname = db.Column(db.String(255))
     Email = db.Column(db.String(255))
     Address = db.Column(db.String(255))
-    OptIntoPhyStatements = db.Column(db.BIT(1))
+    OptIntoPhyStatements = db.Column(db.Boolean)
