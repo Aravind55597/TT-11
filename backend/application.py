@@ -25,7 +25,7 @@ application = app =  Flask(__name__)
 application.config.from_object('config')
 # Allow CORS requests to this API-----------------------------------------------------------------------------------------------------------------------------
 # allow method , origins , methods are * 
-CORS(application)
+CORS(application,supports_credentials=True)
 
 #register app into JWT manager 
 jwt = JWTManager(application)
