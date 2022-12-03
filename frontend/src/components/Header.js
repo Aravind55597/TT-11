@@ -22,17 +22,17 @@ const Header = () => {
         <div className="navbar-nav me-auto">
           <li className="nav-item">
             <Link to={"/"} className="nav-link">
-              Home
+            DBS
             </Link>
           </li>
 
-          {auth.user && (
+          {/* {auth.user && (
             <li className="nav-item">
               <Link to={"/testhome"} className="nav-link">
                 testhome
               </Link>
             </li>
-          )}
+          )} */}
 
           {/* {showAdminBoard && (
             <li className="nav-item">
@@ -42,19 +42,19 @@ const Header = () => {
             </li>
           )} */}
 
-          {auth.user && (
+          {/* {auth.user && (
             <li className="nav-item">
               <Link to={"/user"} className="nav-link">
                 User
               </Link>
             </li>
-          )}
+          )} */}
         </div>
 
         {auth.user ? (
           <div className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
+              <Link to={"/testhome"} className="nav-link">
               {auth.user.info.Firstname + " " +auth.user.info.Lastname}
               </Link>
             </li>
