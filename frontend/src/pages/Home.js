@@ -73,6 +73,7 @@ const Home = () => {
     return (
         <>
             <div className="container">
+                <Table ></Table>
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card card-container">
