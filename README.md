@@ -11,10 +11,10 @@ POST /auth/login
     }
 
 ### Get list of Bank account by UserID
-GET /account/<UserID>
+GET /accounts/<UserID>
 
 ### Get list of Transactions by AccountID
-GET /transaction/<UserID>
+GET /transactions/<UserID>
 
 ### Get User details by UserID
 GET /user/<UserID>

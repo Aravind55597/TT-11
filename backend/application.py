@@ -38,7 +38,7 @@ def healthCheck():
 
 # <AUTH ROUTE>-------------------------------------------------------------------------------------------------------------------
 application.register_blueprint(authRoute, url_prefix='/auth')
-application.register_blueprint(accountRoute, url_prefix='/account')
+application.register_blueprint(accountRoute, url_prefix='/accounts')
 
 
 # <REMOVE THE WHEN USING THIS AS A TEMPLATE>----------------------------------------------------------------------
