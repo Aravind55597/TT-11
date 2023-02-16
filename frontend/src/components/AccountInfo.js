@@ -12,6 +12,8 @@ function AccountInfo() {
   //   const UserAccounts = data.filter((account) => account.UserID === 1);
   const navigate = useNavigate();
   const auth = useAuth();
+
+  console.log(auth.user); 
   const [name, setName] = useState(
     auth.user == null
       ? ""
@@ -20,6 +22,7 @@ function AccountInfo() {
   const [userAccounts, setUserAccounts] = useState({});
   useEffect(() => {
     if (auth.user === null) {
+
       navigate("/login");
     } else {
       var config = {};

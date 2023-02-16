@@ -15,11 +15,12 @@ export const AuthContext = createContext();
 const AuthContextProvider = (props) => {
 
     const [user, setUser] = useState(null);
-
+    console.log(user)
     //on startup check if user is logged in 
     useEffect(() => {
         let authItem = localStorage.getItem("user"); 
         if (authItem) {
+            console.log("User loaded")
             authItem = JSON.parse(authItem); 
 
             setUser({info: jwt_decode(authItem.token), token:authItem.token})
@@ -48,7 +49,7 @@ const AuthContextProvider = (props) => {
 
     return (
         <AuthContext.Provider value={{ user ,login,logout }}>
-            {props.children}
+          {user ? props.children : null}
         </AuthContext.Provider>
     );
 };
